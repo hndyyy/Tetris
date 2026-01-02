@@ -1,0 +1,73 @@
+# Vivado project files
+*.jou
+*.log
+*.pb
+*.dcp
+*.rpt
+*.rpx
+*.backup.*
+*.vdi
+*.wdf
+vivado*.backup.jou
+webtalk*
+usage_statistics_webtalk.*
+
+# Vivado simulation files
+*.wcfg
+*.wdb
+isim/
+*.exe
+
+# Vivado build directories
+.Xil/
+project_tetris.cache/
+project_tetris.hw/*/wave/
+project_tetris.runs/synth_1/*
+project_tetris.runs/impl_1/*
+!project_tetris.runs/synth_1/.gitkeep
+!project_tetris.runs/impl_1/.gitkeep
+
+# Keep run configuration but not outputs
+project_tetris.runs/synth_1/*.log
+project_tetris.runs/synth_1/*.rpt
+project_tetris.runs/impl_1/*.log
+project_tetris.runs/impl_1/*.rpt
+
+# IP user files
+project_tetris.ip_user_files/
+
+# Simulation files
+project_tetris.sim/
+
+# Generated files
+*.bit
+*.ltx
+*.mcs
+*.prm
+*.bin
+
+# OS specific
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# IDE specific
+.vscode/
+.idea/
+*.sublime-*
+
+# Backup files
+*.backup
+*.bak
+*~
+
+# Keep these important project files
+!*.xpr
+!*.xdc
+!*.v
+!*.vhd
+!*.tcl
+!*.bd
+!README.md
+!.gitignore
