@@ -113,13 +113,16 @@ set_property IOSTANDARD LVCMOS33 [get_ports {An[3]}]
 
 
 ##Buttons
-#btnC
-#set_property PACKAGE_PIN U18 [get_ports start]
-#	set_property IOSTANDARD LVCMOS33 [get_ports start]
-###btnUP
-##btnL
-##btnR
-##btnD
+set_property PACKAGE_PIN U18 [get_ports btnC]						
+set_property IOSTANDARD LVCMOS33 [get_ports btnC]
+set_property PACKAGE_PIN T18 [get_ports btnU]						
+set_property IOSTANDARD LVCMOS33 [get_ports btnU]
+set_property PACKAGE_PIN W19 [get_ports btnL]						
+set_property IOSTANDARD LVCMOS33 [get_ports btnL]
+set_property PACKAGE_PIN T17 [get_ports btnR]						
+set_property IOSTANDARD LVCMOS33 [get_ports btnR]
+set_property PACKAGE_PIN U17 [get_ports btnD]						
+set_property IOSTANDARD LVCMOS33 [get_ports btnD]
 
 
 
@@ -300,7 +303,7 @@ set_property IOSTANDARD LVCMOS33 [get_ports VSync]
 #set_property IOSTANDARD LVCMOS33 [get_ports QspiCSn]
 
 
-set_property PACKAGE_PIN C17 [get_ports kclk]
-set_property PACKAGE_PIN B17 [get_ports kdata]
-set_property IOSTANDARD LVCMOS33 [get_ports kclk]
-set_property IOSTANDARD LVCMOS33 [get_ports kdata]
+#set_property PACKAGE_PIN C17 [get_ports kclk]
+#set_property PACKAGE_PIN B17 [get_ports kdata]
+#set_property IOSTANDARD LVCMOS33 [get_ports kclk]
+#set_property IOSTANDARD LVCMOS33 [get_ports kdata]

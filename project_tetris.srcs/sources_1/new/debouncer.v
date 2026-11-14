@@ -24,10 +24,10 @@
 module debouncer(
     input clk,
     input I,
-    output reg O
+    output reg O = 0
     );
     parameter COUNT_MAX=255, COUNT_WIDTH=8;
-    reg [COUNT_WIDTH-1:0] count;
+    reg [COUNT_WIDTH-1:0] count = 0;
     reg Iv=0;
     always@(posedge clk)
         if (I == Iv) begin
