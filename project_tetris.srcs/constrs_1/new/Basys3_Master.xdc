@@ -1,14 +1,18 @@
-## This file is a general .xdc for the Basys3 rev B board
-## To use it in a project:
-## - uncomment the lines corresponding to used pins
-## - rename the used ports (in each line, after get_ports) according to the top level signal names in the project
+## ==============================================================================
+## Basys3 Master Constraints File (XDC)
+## Target Board: Digilent Basys 3 (Xilinx Artix-7 xc7a35tcpg236-1)
+## Project: Tetris FPGA
+## ==============================================================================
+## Catatan Perubahan:
+## - Migrasi kontrol input dari Keyboard PS/2 (kclk/kdata) ke Push Buttons bawaan (btnC, btnU, btnL, btnR, btnD).
+## - Port I/O diselaraskan dengan modul top-level Tetris_top.
+## ==============================================================================
 
-## This file is a general .xdc for the Basys3 rev B board
-## To use it in a project:
-## - uncomment the lines corresponding to used pins
-## - rename the used ports (in each line, after get_ports) according to the top level signal names in the project
+# Configuration Bank Voltage Select & Configuration Voltage (Artix-7 Basys 3)
+set_property CFGBVS VCCO [current_design]
+set_property CONFIG_VOLTAGE 3.3 [current_design]
 
-# Clock signal
+# Clock signal (100 MHz)
 set_property PACKAGE_PIN W5 [get_ports clk]
 set_property IOSTANDARD LVCMOS33 [get_ports clk]
 create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} -add [get_ports clk]
@@ -112,16 +116,16 @@ set_property PACKAGE_PIN W4 [get_ports {An[3]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {An[3]}]
 
 
-##Buttons
-set_property PACKAGE_PIN U18 [get_ports btnC]						
+## Push Buttons (Aktif setelah migrasi dari keyboard PS/2)
+set_property PACKAGE_PIN U18 [get_ports btnC]
 set_property IOSTANDARD LVCMOS33 [get_ports btnC]
-set_property PACKAGE_PIN T18 [get_ports btnU]						
+set_property PACKAGE_PIN T18 [get_ports btnU]
 set_property IOSTANDARD LVCMOS33 [get_ports btnU]
-set_property PACKAGE_PIN W19 [get_ports btnL]						
+set_property PACKAGE_PIN W19 [get_ports btnL]
 set_property IOSTANDARD LVCMOS33 [get_ports btnL]
-set_property PACKAGE_PIN T17 [get_ports btnR]						
+set_property PACKAGE_PIN T17 [get_ports btnR]
 set_property IOSTANDARD LVCMOS33 [get_ports btnR]
-set_property PACKAGE_PIN U17 [get_ports btnD]						
+set_property PACKAGE_PIN U17 [get_ports btnD]
 set_property IOSTANDARD LVCMOS33 [get_ports btnD]
 
 
@@ -303,6 +307,7 @@ set_property IOSTANDARD LVCMOS33 [get_ports VSync]
 #set_property IOSTANDARD LVCMOS33 [get_ports QspiCSn]
 
 
+## Legacy PS/2 Interface (Dinonaktifkan - kontrol input dialihkan ke push buttons)
 #set_property PACKAGE_PIN C17 [get_ports kclk]
 #set_property PACKAGE_PIN B17 [get_ports kdata]
 #set_property IOSTANDARD LVCMOS33 [get_ports kclk]
